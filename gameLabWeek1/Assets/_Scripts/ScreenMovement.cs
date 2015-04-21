@@ -6,11 +6,11 @@ public class ScreenMovement : MonoBehaviour {
 	private float _x;
 	private float _y;
 
-	private bool moving;
+	public bool moving;
 
 	void Awake()
 	{
-		moving = true;
+		moving = false;
 		_x = 0;
 		_y = 200;
 	}
@@ -34,5 +34,10 @@ public class ScreenMovement : MonoBehaviour {
 				moving = false;
 			}
 		}
+	}
+
+	public void move()
+	{
+		moving = true;
 	}
 }
