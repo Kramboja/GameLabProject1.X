@@ -23,7 +23,6 @@ namespace Leap {
         for (int j = 0; j < second_colliders.Length; ++j) {
           if (first_colliders[i] != second_colliders[j] &&
               first_colliders[i].enabled && second_colliders[j].enabled) {
-            Physics.IgnoreCollision(first_colliders[i], second_colliders[j], ignore);
           }
         }
       }
