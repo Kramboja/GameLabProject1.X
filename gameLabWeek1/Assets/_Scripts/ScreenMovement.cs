@@ -10,7 +10,7 @@ public class ScreenMovement : MonoBehaviour {
 
 	void Awake()
 	{
-		Globals.GameState = "Game";
+		Globals.GameState = "Menu";
 
 		moving = false;
 		_x = 0;

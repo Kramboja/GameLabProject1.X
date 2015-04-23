@@ -9,7 +9,7 @@ public class spawning : MonoBehaviour {
 	{
 		Debug.Log(Random.Range(0,enemies.Length));
 
-		InvokeRepeating("spawnEnemies",1,1);
+		InvokeRepeating("spawnEnemies",1,3);
 	}
 
 	void spawnEnemies()
