@@ -3,7 +3,7 @@ using System.Collections;
 
 public class moveToPlayer : MonoBehaviour {
 
-	public float speed;
+	private float speed;
 
 	void Awake()
 	{
@@ -13,5 +13,12 @@ public class moveToPlayer : MonoBehaviour {
 	void Update () 
 	{
 		transform.position = Vector3.MoveTowards(transform.position, new Vector2(0,0),speed * Time.deltaTime);
+		if(transform.position.x < 1 && transform.position.x > -1)
+		{
+			if(transform.position.y < 1 && transform.position.y > -1)
+			{
+				Destroy(gameObject);
+			}
+		}
 	}
 }
