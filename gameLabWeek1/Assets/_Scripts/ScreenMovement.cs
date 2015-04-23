@@ -10,6 +10,8 @@ public class ScreenMovement : MonoBehaviour {
 
 	void Awake()
 	{
+		Globals.GameState = "Game";
+
 		moving = false;
 		_x = 0;
 		_y = 200;
@@ -32,6 +34,7 @@ public class ScreenMovement : MonoBehaviour {
 			if(_x == 0f)
 			{
 				moving = false;
+				Globals.GameState = "Game";
 			}
 		}
 	}
