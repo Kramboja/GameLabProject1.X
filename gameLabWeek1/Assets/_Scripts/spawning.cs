@@ -8,7 +8,6 @@ public class spawning : MonoBehaviour {
 	void Awake()
 	{
 		Debug.Log(Random.Range(0,enemies.Length));
-
 		InvokeRepeating("spawnEnemies",1,3);
 	}
 
