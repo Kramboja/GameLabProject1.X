@@ -6,12 +6,19 @@ public class dieScript : MonoBehaviour {
 	public Material[] states;
 	private int lives;
 
+	public GameObject resources;
+	public int minScore;
+	public int maxScore;
+
+
 	// Update is called once per frame
 	void Awake () 
 	{
 		lives = 3;
 
 		GetComponent<Renderer>().material = states[lives - 1];
+
+		resources=GameObject.Find("Resources");
 	}
 
 	void OnCollisionEnter(Collision collision)
@@ -22,6 +29,8 @@ public class dieScript : MonoBehaviour {
 
 			if(lives < 0);
 			{
+				resources.GetComponent<resources>().UpdateScore(Random.Range(minScore,maxScore));
+
 				Destroy(gameObject);
 			}
 
