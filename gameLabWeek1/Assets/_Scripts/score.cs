@@ -9,5 +9,7 @@ public class score : MonoBehaviour {
 	public void UpdateUI(int score)
 	{
 		scoreText.text = "" + score;
+
+		PlayerPrefs.SetInt("Player Score", score);
 	}
 }
