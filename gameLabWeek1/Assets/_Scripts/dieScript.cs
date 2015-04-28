@@ -37,6 +37,7 @@ public class dieScript : MonoBehaviour {
 			lives -= 1;
 
 			GetComponent<Renderer>().material = states[lives - 1];
+			GetComponent<AudioSource>().Play();
 		}
 	}
 }
