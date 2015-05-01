@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class startGame : MonoBehaviour {
+public class MoveToMenu : MonoBehaviour {
 
 	public GameObject mainCamera;
-
+	
 	void OnTriggerEnter(Collider other)
 	{
-		mainCamera.GetComponent<ScreenMovement>().moving = true;
+		mainCamera.GetComponent<ScreenMovement>().menu = true;
 	}
-
 }

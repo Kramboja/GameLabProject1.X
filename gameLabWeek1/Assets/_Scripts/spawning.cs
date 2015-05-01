@@ -5,14 +5,20 @@ using UnityEngine.UI;
 public class spawning : MonoBehaviour {
 
 	public GameObject[] enemies;
+	public GameObject endScreen;
+
 	private int waveSize;
+	private bool inGame;
 
 	private Text wave;
 
 
 	void Awake()
 	{
+		inGame = true;
 		wave = GameObject.Find("waveNumber").GetComponent<Text>();
+		endScreen = GameObject.Find("EndScreen");
+		endScreen.SetActive(false);
 		startSpawnEnemies(30);
 	}
 
@@ -35,23 +41,35 @@ public class spawning : MonoBehaviour {
 
 		enemy.transform.position = new Vector3(x,10,y);
 
-		if(waveSize == 0)
-		{
-
-		}
-
 		waveSize -= 1;
 
-		if(waveSize == 0)
+		if(waveSize < 0)
 		{
 			waveSize = 30;
 			CancelInvoke("spawnEnemies");
+			InvokeRepeating("countDown",1,1);
 		}
 	}
 
+	private void countDown()
+	{
+		if(inGame)
+		{
+			waveSize = 10;
+			inGame = false;
+		}
+		wave.text = "" + waveSize;
+		waveSize -= 1;
+
+		if (waveSize < 0)
+		{
+			CancelInvoke("countDown");
+			endScreen.SetActive(true);
+		}
+	}
 	public void startSpawnEnemies(int size)
 	{
 		waveSize = size;
-		InvokeRepeating("spawnEnemies",1,3);
+		InvokeRepeating("spawnEnemies",1,2);
 	}
 }
