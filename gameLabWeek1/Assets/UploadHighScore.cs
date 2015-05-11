@@ -3,6 +3,7 @@ using System.Collections;
 
 public class UploadHighScore : MonoBehaviour {
 	private bool Uploaded;
+    public DbController dbController;
 
 	void Awake()
 	{
@@ -13,7 +14,7 @@ public class UploadHighScore : MonoBehaviour {
 	{
 		if(!Uploaded)
 		{
-			//start uploading highscore here
+            dbController.SaveScores(SystemInfo.deviceName, PlayerPrefs.GetInt("Player Score"));
 		}
 	}
 }

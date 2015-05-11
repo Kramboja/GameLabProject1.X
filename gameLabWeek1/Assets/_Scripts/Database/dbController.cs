@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class dbController : MonoBehaviour {
+public class DbController : MonoBehaviour {
 
     private string _name;
     private int _score;
