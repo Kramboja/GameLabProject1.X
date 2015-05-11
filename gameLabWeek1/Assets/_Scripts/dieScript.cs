@@ -4,7 +4,7 @@ using System.Collections;
 public class dieScript : MonoBehaviour {
 
 	public Material[] states;
-	private int lives;
+	public int lives;
 
 	public GameObject resources;
 	public int minScore;
@@ -14,7 +14,10 @@ public class dieScript : MonoBehaviour {
 	// Update is called once per frame
 	void Awake () 
 	{
-		lives = 3;
+		if(lives == 0)
+		{
+			lives = 3;
+		}
 
 		GetComponent<Renderer>().material = states[lives - 1];
 

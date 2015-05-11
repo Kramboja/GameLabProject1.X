@@ -24,7 +24,7 @@ public class spawning : MonoBehaviour {
 
 	void spawnEnemies()
 	{
-		var enemy = Instantiate(enemies[Random.Range(0, enemies.Length-1)]);
+		var enemy = Instantiate(enemies[Random.Range(0, enemies.Length)]);
 		int x = Random.Range(-45,45);
 		int y = Random.Range(-45,-35);
 
